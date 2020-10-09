@@ -17,11 +17,11 @@ title: 快速上手
 
 
 ## 安装
-推荐 npm 安装。
+使用 npm 安装。
 ```sh
 npm i -S amap-upper
 ```
-## npm方式导入
+## ES Module 方式导入
 
 ```javascript
 import amapUpper from 'amap-upper'
