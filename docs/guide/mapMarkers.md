@@ -23,7 +23,7 @@ title: 普通点位组
 | setLastIcon | `Bollean`   | 默认 `true`，是否恢复上一个点击激活点位的图标|
 | markerOpt | `Object`   | [ 高德`Marker`配置项](https://lbs.amap.com/api/javascript-api/reference/overlay#marker)，如果包含 `icon` 会覆盖掉设置的 `initIcon` |
 | markerFormatter | `Function`   | 一个点位格式化函数，数据源循环生成 `marker` 的时候调用，接收数据项 `item` ,`index`, `icons`作为参数，返回点位配置参数，后置于 `markerOpt` ，一般用于特殊点配置修改 |
-| clickCallback | `Function`   | 点位点击回调函数，接收 事件对象`e`,上一个点击点位`oldClickMarker`, 根据 `markerStyles` 生成的所有图标对象组`icons`。可以调用`e.target.setIcon(icons.xxx)` 改变点位 |
+| clickCallback | `Function`   | 点位点击回调函数，接收 事件对象`e`,上一个点击点位`oldClickMarker`, 根据 `markerStyles` 生成的所有图标对象组`icons`。可以调用`e.target.setIcon(icons.xxx)` 改变点位,  |
 
 #### 高德实例
 - `marker` 点实例：
@@ -37,7 +37,7 @@ title: 普通点位组
 
     | 方法 | 描述 |
     | :---| :--- |
-    | `setIcon` | 重置了 `marker` 实例的 `setIcon` 方法，接受配置的 `iconName` 或者生成的 `icons` 中的 `icon` 作为参数，设置该点位图标， 内部会记录该点，作为下一次点击时的 `oldClickMarker`数据数组的索引 |
+    | `setIcon` | 重置了 `marker` 实例的 `setIcon` 方法，接受配置的 `iconName` 或者生成的 `icons` 中的 `icon` 作为参数，设置该点位图标， 内部会记录该点的上一个图标 `_u_lastIcon`|
     
 
 

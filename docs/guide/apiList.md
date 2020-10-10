@@ -54,8 +54,10 @@ title: API总览
 
 
 ### 信息窗体
-- [添加信息窗体](./infoWindow.md)
-- [清除信息窗体](./infoWindow.md)
+- [添加信息窗体](./infoWindow.md#mapU.openInfoWindow)
+- [清除信息窗体](./infoWindow.md#mapU.clearInfoWindow)
+
+
 
 ### 绘制编辑工具
 - [鼠标绘制工具](./drawEditor.md#mapU.mouseToolDraw)
