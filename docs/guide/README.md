@@ -50,6 +50,45 @@ amapUpper.load({
 })
 ```
 
+## plugins 扩展
+
+`amapUpper.install`
+
+`@params`: `plugins`| `Object`
+
+plugins 必须是一个对象，对象的属性会挂载到封装的类的 `prototype` 上，当初始化地图 `initMap` 时，地图加载完成回调中传入的 `mapU` 实例将会拥有合并上去的方法。
+
+如果传入的参数不是一个对象，将会抛出异常。
+
+如果定义的方法已经存在，将会抛出异常，并忽略跳过当前要定义的方法。
+
+```javascript
+amapUpper.load()
+
+// 在调用install 方法之后加载的地图实例拥有 install 的方法
+amapUpper.install({
+  testInstall: function (
+    [longitude, latitude],
+    markerOptions = {}
+  ) {
+    this.clearLocation()
+    this.localtionMarker = new AMap.Marker({
+      position: new AMap.LngLat(longitude, latitude),
+      ...markerOptions
+    })
+    this.localtionMarker.setMap(this.map)
+    this.setCenter([longitude, latitude])
+  }
+})
+
+amapUpper.initMap(
+  { target: this.$refs.app, ...MapOptions },
+  mapU => { mapU.testInstall([120, 30])}
+)
+```
+
+
+
 
 ## 初始化地图
 `amapUpper.initMap`
@@ -85,6 +124,8 @@ amapUpper.load(loaderOptions).initMap(
     mapU.mapMarkers(options)
   }
 )
+
+
 ```
 
 

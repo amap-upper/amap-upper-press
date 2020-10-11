@@ -3,6 +3,11 @@ title: API总览
 ---
 
 
+### 初始化
+- [初始化地图API加载起](./#初始化插件)
+- [注册 Plugins](./#plugins-扩展)
+- [初始化地图](./#初始化地图)
+
 ### 普通点
 - [添加一组普通点](./mapMarkers.md#mapU.mapMarkers)
 - [获取普通点集合](./mapMarkers.md#mapU.getMapMarkersByType)
